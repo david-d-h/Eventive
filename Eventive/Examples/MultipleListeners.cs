@@ -1,6 +1,6 @@
 ﻿using Eventive.Models;
 
-// ReSharper disable once CheckNameSpace
+// ReSharper disable once CheckNamespace
 namespace Eventive.Examples.MultipleListeners;
 
 internal class SomeEvent : Event
