@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventive", "Eventive\Eventive.csproj", "{12DF5187-028B-49F6-9FC2-C8E4A31BF997}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Examples\Examples.csproj", "{F0EA4FF2-9F3B-4274-AA4E-449E516CFB9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{12DF5187-028B-49F6-9FC2-C8E4A31BF997}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12DF5187-028B-49F6-9FC2-C8E4A31BF997}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12DF5187-028B-49F6-9FC2-C8E4A31BF997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0EA4FF2-9F3B-4274-AA4E-449E516CFB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EA4FF2-9F3B-4274-AA4E-449E516CFB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EA4FF2-9F3B-4274-AA4E-449E516CFB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EA4FF2-9F3B-4274-AA4E-449E516CFB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

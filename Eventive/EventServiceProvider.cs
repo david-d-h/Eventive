@@ -7,7 +7,7 @@ public abstract class EventServiceProvider
     /// <summary>
     /// The externally defined dictionary that holds the Event -> Listener mappings.
     /// </summary>
-    private protected abstract Dictionary<Type, Type[]> Listen { get; }
+    protected abstract Dictionary<Type, Type[]> Listen { get; }
 
     /// <summary>
     /// A helper method that resolves an event into it's underlying type and returns it. 

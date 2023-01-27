@@ -4,7 +4,7 @@
 /// An interface that should be implemented by any <see cref="Listener"/> to indicate what events they handle.
 /// </summary>
 /// <typeparam name="T">The type of the Event this handler should cover</typeparam>
-internal interface IHandles<in T>
+public interface IHandles<in T>
     where T : Event, IEvent
 {
     /// <summary>
