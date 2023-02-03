@@ -1,0 +1,6 @@
+﻿[*]
+indent_size = tab
+indent_style = tab
+
+[*.cs]
+trim_trailing_whitespace = true

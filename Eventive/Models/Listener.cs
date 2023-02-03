@@ -28,7 +28,7 @@ public interface IListener
     public void Handle<T>(T @event)
         where T : Event, IEvent
     {
-        (this as IHandles<T>)?.Handle(@event);
+	    (this as IHandles<T>)?.Handle(@event);
     }
 }
 

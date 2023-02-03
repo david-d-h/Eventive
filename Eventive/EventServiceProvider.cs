@@ -1,16 +1,28 @@
-﻿using Eventive.Models;
+﻿using Eventive.Exceptions;
+using Eventive.Exceptions.EventMapping;
+using Eventive.Models;
 
 namespace Eventive;
 
 public abstract class EventServiceProvider
 {
-    /// <summary>
-    /// The externally defined dictionary that holds the Event -> Listener mappings.
+	/// <summary>
+    /// The externally defined dictionary that holds the Event -> Listener mapping.
     /// </summary>
     protected abstract Dictionary<Type, Type[]> Listen { get; }
 
-    /// <summary>
-    /// A helper method that resolves an event into it's underlying type and returns it. 
+	/// <summary>
+	/// Checks whether the Event -> Listener mapping that was the defined doesn't contain invalid types, else throws.
+	/// </summary>
+	/// <exception cref="InvalidEventMappingTypesException">This exception gets thrown if the checks have failed.</exception>
+	protected EventServiceProvider()
+	{
+		if (!CheckDefinedMapping())
+			throw new InvalidEventMappingTypesException();
+	}
+
+	/// <summary>
+    /// A helper method that resolves an event into it's underlying type and returns it.
     /// </summary>
     /// <typeparam name="T">The type of the event that should be registered</typeparam>
     /// <returns>A type that can be used for registering an event</returns>
@@ -49,5 +61,23 @@ public abstract class EventServiceProvider
                 listener.Handle(@event);
             }
         }
+    }
+
+    /// <summary>
+    /// This function takes the defined Event -> Listener mapping and checks whether all defined Events and Listeners inherit from their corresponding types.
+    /// </summary>
+    /// <returns>Value based off whether all checks were successful.</returns>
+    private bool CheckDefinedMapping()
+    {
+	    foreach (var binding in Listen)
+	    {
+		    if (!binding.Key.IsSubclassOf(typeof(Event)))
+			    return false;
+
+		    if (binding.Value.Any(listenerT => !listenerT.IsSubclassOf(typeof(Listener))))
+			    return false;
+	    }
+
+	    return true;
     }
 }

@@ -11,11 +11,11 @@ public class Basic
     // See the example named EventData.cs for an example on how to make an event that does hold data.
     protected class TestEvent : Event
     {
-        // 
+        //
     }
-    
+
     // This is an event listener, all listeners should inherit from the Listener model.
-    // 
+    //
     // To register handlers for events, use the IHandles interface,
     // this interface accepts one type argument, the type of the event that it should handle with this implementation.
     protected class TestListener : Listener,
@@ -26,7 +26,7 @@ public class Basic
             Console.WriteLine("Handling TestEvent from TestListener!");
         }
     }
-    
+
     // This is the Event Service in which you'll register the Event -> Listener mapping for this specific Service.
     protected class EventService : EventServiceProvider
     {
@@ -40,7 +40,7 @@ public class Basic
             }
         };
     }
-    
+
     public static void Main()
     {
         var eventService = new EventService();

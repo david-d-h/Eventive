@@ -15,7 +15,7 @@ public class EventData
             Planet = planet;
         }
     }
-    
+
     protected class DataListener : Listener,
         IHandles<DataEvent>
     {
@@ -24,7 +24,7 @@ public class EventData
             Console.WriteLine($"Hello from {@event.Planet}!");
         }
     }
-    
+
     // There is nothing special going on here, it's the exact same as the Basic example.
     protected class EventService : EventServiceProvider
     {
@@ -36,7 +36,7 @@ public class EventData
             }
         };
     }
-    
+
     public static void Main()
     {
         var eventService = new EventService();
